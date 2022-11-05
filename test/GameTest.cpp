@@ -1,27 +1,35 @@
 #include <iostream>
 
-#include "IGame.h"
+#include "MockGame.hpp"
 #include "GameRunner.hpp"
 
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 
-class MockGame : public IGame
-{
-public:
-    MOCK_METHOD0(start, bool());
-    MOCK_METHOD0(stop, bool());
-};
+namespace {
 
+using ::testing::Return;
 
 TEST(GameTest, StartGameTest)
 {
-    MockGame game;
-    GameRunner runner(game);
+    mocks::MockGame game;
+    EXPECT_CALL(game, start()).Times(1).WillOnce(Return(true));
 
-    // runner.start();
+    ChessGame::GameRunner runner(game);
 
-    // std::cout << "hello world\n";
+    bool start_ok = runner.start();
+    EXPECT_TRUE(start_ok);
+}
 
-    EXPECT_EQ(true, true);
+TEST(GameTest, StopGameTest)
+{
+    mocks::MockGame game;
+    EXPECT_CALL(game, stop()).Times(1).WillOnce(Return(false));
+
+    ChessGame::GameRunner runner(game);
+
+    bool start_ok = runner.stop();
+    EXPECT_FALSE(start_ok);
+}
+
 }

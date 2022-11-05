@@ -4,13 +4,18 @@
 
 #include <memory>
 
+namespace ChessGame {
+
 class GameRunner 
 {
 public:
     GameRunner(IGame& game) : game_(game) {}
 
     bool start() { return game_.start(); }
+    bool stop() { return game_.stop(); }
 
 private:
     IGame& game_;
 };
+
+}

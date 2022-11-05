@@ -1,5 +1,7 @@
 #pragma once
 
+namespace ChessGame {
+
 class IGame {
 public:
     virtual ~IGame() {}
@@ -7,3 +9,5 @@ public:
     virtual bool start() = 0;
     virtual bool stop() = 0;
 };
+
+}

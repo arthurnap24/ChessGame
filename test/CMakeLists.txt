@@ -6,7 +6,10 @@ find_package(GTest REQUIRED)
 add_executable(game_test main.cpp
     GameTest.cpp)
 
-target_include_directories(game_test PUBLIC ${CMAKE_SOURCE_DIR}/src/)
+target_include_directories(game_test PUBLIC 
+    ${CMAKE_SOURCE_DIR}/src/
+    ${CMAKE_SOURCE_DIR}/test/mocks/)
+
 target_link_libraries(game_test
     GTest::gtest
     GTest::gtest_main
