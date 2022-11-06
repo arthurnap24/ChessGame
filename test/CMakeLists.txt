@@ -4,7 +4,7 @@ project(ChessGameTest)
 find_package(GTest REQUIRED)
 
 add_executable(game_test main.cpp
-    GameTest.cpp)
+    game_runner_test.cpp)
 
 target_include_directories(game_test PUBLIC 
     ${CMAKE_SOURCE_DIR}/src/
