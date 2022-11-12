@@ -4,7 +4,7 @@
 
 #include <memory>
 
-namespace ChessGame {
+namespace Game {
 
 class GameRunner 
 {

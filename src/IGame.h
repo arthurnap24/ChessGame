@@ -1,6 +1,6 @@
 #pragma once
 
-namespace ChessGame {
+namespace Game {
 
 class IGame {
 public:
