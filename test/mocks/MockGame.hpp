@@ -6,7 +6,7 @@
 
 namespace mocks {
 
-class MockGame : public ChessGame::IGame
+class MockGame : public Game::IGame
 {
 public:
     MOCK_METHOD0(start, bool());
