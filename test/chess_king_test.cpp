@@ -62,29 +62,66 @@ TEST_F(KingTest, MoveLeft)
 
 TEST_F(KingTest, MoveNE)
 {
-    is_not_allowed(move_ne());
+    is_allowed(move_ne());
 }
 
 TEST_F(KingTest, MoveNW)
 {    
-    is_not_allowed(move_nw());
+    is_allowed(move_nw());
 }
 
 TEST_F(KingTest, MoveSE)
 {
-    is_not_allowed(move_se());
+    is_allowed(move_se());
 }
 
 TEST_F(KingTest, MoveSW)
 {
-    is_not_allowed(move_sw());
+    is_allowed(move_sw());
 }
 
 TEST_F(KingTest, MoveUpNonNeighbor)
 {
     Coordinate src{XAxis::A, YAxis::ONE};
-    Coordinate dst{XAxis::A, YAxis::EIGHT};
-    is_not_allowed(move_from_to(src, dst));
+    is_not_allowed(move_from_to(src, {XAxis::A, YAxis::THREE}));
+    is_not_allowed(move_from_to(src, {XAxis::A, YAxis::FOUR}));
+    is_not_allowed(move_from_to(src, {XAxis::A, YAxis::FIVE}));
+    is_not_allowed(move_from_to(src, {XAxis::A, YAxis::SIX}));
+    is_not_allowed(move_from_to(src, {XAxis::A, YAxis::SEVEN}));
+    is_not_allowed(move_from_to(src, {XAxis::A, YAxis::EIGHT}));
+}
+
+TEST_F(KingTest, MoveDownNonNeighbor)
+{
+    Coordinate src{XAxis::A, YAxis::EIGHT};
+    is_not_allowed(move_from_to(src, {XAxis::A, YAxis::SIX}));
+    is_not_allowed(move_from_to(src, {XAxis::A, YAxis::FIVE}));
+    is_not_allowed(move_from_to(src, {XAxis::A, YAxis::FOUR}));
+    is_not_allowed(move_from_to(src, {XAxis::A, YAxis::THREE}));
+    is_not_allowed(move_from_to(src, {XAxis::A, YAxis::TWO}));
+    is_not_allowed(move_from_to(src, {XAxis::A, YAxis::ONE}));
+}
+
+TEST_F(KingTest, MoveLeftNonNeighbor)
+{
+    Coordinate src{XAxis::H, YAxis::ONE};
+    is_not_allowed(move_from_to(src, {XAxis::F, YAxis::ONE}));
+    is_not_allowed(move_from_to(src, {XAxis::E, YAxis::ONE}));
+    is_not_allowed(move_from_to(src, {XAxis::D, YAxis::ONE}));
+    is_not_allowed(move_from_to(src, {XAxis::C, YAxis::ONE}));
+    is_not_allowed(move_from_to(src, {XAxis::B, YAxis::ONE}));
+    is_not_allowed(move_from_to(src, {XAxis::A, YAxis::ONE}));
+}
+
+TEST_F(KingTest, MoveRightNonNeighbor)
+{
+    Coordinate src{XAxis::A, YAxis::ONE};
+    is_not_allowed(move_from_to(src, {XAxis::C, YAxis::ONE}));
+    is_not_allowed(move_from_to(src, {XAxis::D, YAxis::ONE}));
+    is_not_allowed(move_from_to(src, {XAxis::E, YAxis::ONE}));
+    is_not_allowed(move_from_to(src, {XAxis::F, YAxis::ONE}));
+    is_not_allowed(move_from_to(src, {XAxis::G, YAxis::ONE}));
+    is_not_allowed(move_from_to(src, {XAxis::H, YAxis::ONE}));
 }
 
 }

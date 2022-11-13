@@ -1,24 +1,24 @@
 #include "ChessSkill.h"
 
+#include <cstdlib>
+#include <iostream>
+
 namespace ChessGame {
 
 bool ChessSkill::move(const King& king,
     const Coordinate& src,
     const Coordinate& dst)
 {
-    return !is_diagonal(src, dst) && is_neighbor(src, dst);
-}
-
-bool ChessSkill::is_diagonal(const Coordinate& src, const Coordinate& dst)
-{
-    bool is_equal_x = src.x_ == dst.x_;
-    bool is_equal_y = src.y_ == dst.y_;
-    return !is_equal_x && !is_equal_y;
+    return is_neighbor(src, dst);
 }
 
 bool ChessSkill::is_neighbor(const Coordinate& src, const Coordinate& dst)
 {
-    return false;
+    uint8_t x_distance = std::abs(
+        static_cast<uint8_t>(dst.x_) - static_cast<uint8_t>(src.x_));
+    uint8_t y_distance = std::abs(
+        static_cast<uint8_t>(dst.y_) - static_cast<uint8_t>(src.y_));
+    return (x_distance <= 1) && (y_distance <= 1);
 }
 
 }
