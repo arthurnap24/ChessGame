@@ -10,7 +10,7 @@ namespace fixtures {
 using namespace ChessGame;
 
 template <typename ChessPieceType>
-class ChessTest : public ::testing::Test {
+class ChessPieceMovementTest : public ::testing::Test {
 protected:
     void expect_move_ok(const Coordinate& src, const Coordinate& dst)
     {
