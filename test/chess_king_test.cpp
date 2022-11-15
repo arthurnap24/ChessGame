@@ -1,5 +1,4 @@
-#include "ChessSkill.h"
-#include "Coordinate.h"
+#include "fixtures/ChessTest.hpp"
 #include "King.h"
 
 #include <gtest/gtest.h>
@@ -9,26 +8,7 @@ namespace {
 
 using namespace ChessGame;
 
-class KingTest : public ::testing::Test {
-protected:
-    void expect_move_ok(const Coordinate& src, const Coordinate& dst)
-    {
-        EXPECT_TRUE(move_from_to(src, dst));
-    }
-
-    void expect_move_bad(const Coordinate& src, const Coordinate& dst)
-    {
-        EXPECT_FALSE(move_from_to(src, dst));
-    }
-
-private:
-    bool move_from_to(const Coordinate& src, const Coordinate& dst) {
-        return skill_.move(k_, src, dst);
-    }
-
-    King k_;
-    ChessSkill skill_;
-};
+using KingTest = fixtures::ChessTest<King>;
 
 TEST_F(KingTest, MoveUp)
 {
