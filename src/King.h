@@ -2,7 +2,6 @@
 
 namespace ChessGame {
 
-class King {
-};
+class King {};
 
 }
