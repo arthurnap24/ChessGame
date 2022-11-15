@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Coordinate.h"
+#include "Coordinate.hpp"
 #include "King.h"
 
 namespace ChessGame {

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ChessSkill.h"
-#include "Coordinate.h"
+#include "Coordinate.hpp"
 
 #include <gtest/gtest.h>
 
