@@ -124,4 +124,48 @@ TEST_F(KingTest, MoveRightNonNeighbor)
     is_not_allowed(move_from_to(src, {XAxis::H, YAxis::ONE}));
 }
 
+TEST_F(KingTest, MoveNENonNeighbor)
+{
+    Coordinate src{XAxis::A, YAxis::ONE};
+    is_not_allowed(move_from_to(src, {XAxis::C, YAxis::THREE}));
+    is_not_allowed(move_from_to(src, {XAxis::D, YAxis::FOUR}));
+    is_not_allowed(move_from_to(src, {XAxis::E, YAxis::FIVE}));
+    is_not_allowed(move_from_to(src, {XAxis::F, YAxis::SIX}));
+    is_not_allowed(move_from_to(src, {XAxis::G, YAxis::SEVEN}));
+    is_not_allowed(move_from_to(src, {XAxis::H, YAxis::EIGHT}));
+}
+
+TEST_F(KingTest, MoveNWNonNeighbor)
+{
+    Coordinate src{XAxis::H, YAxis::ONE};
+    is_not_allowed(move_from_to(src, {XAxis::F, YAxis::THREE}));
+    is_not_allowed(move_from_to(src, {XAxis::E, YAxis::FOUR}));
+    is_not_allowed(move_from_to(src, {XAxis::D, YAxis::FIVE}));
+    is_not_allowed(move_from_to(src, {XAxis::C, YAxis::SIX}));
+    is_not_allowed(move_from_to(src, {XAxis::B, YAxis::SEVEN}));
+    is_not_allowed(move_from_to(src, {XAxis::A, YAxis::EIGHT}));
+}
+
+TEST_F(KingTest, MoveSENonNeighbor)
+{
+    Coordinate src{XAxis::A, YAxis::EIGHT};
+    is_not_allowed(move_from_to(src, {XAxis::C, YAxis::SIX}));
+    is_not_allowed(move_from_to(src, {XAxis::D, YAxis::FIVE}));
+    is_not_allowed(move_from_to(src, {XAxis::E, YAxis::FOUR}));
+    is_not_allowed(move_from_to(src, {XAxis::F, YAxis::THREE}));
+    is_not_allowed(move_from_to(src, {XAxis::G, YAxis::TWO}));
+    is_not_allowed(move_from_to(src, {XAxis::H, YAxis::ONE}));
+}
+
+TEST_F(KingTest, MoveSWNonNeighbor)
+{
+    Coordinate src{XAxis::H, YAxis::EIGHT};
+    is_not_allowed(move_from_to(src, {XAxis::F, YAxis::SIX}));
+    is_not_allowed(move_from_to(src, {XAxis::E, YAxis::FIVE}));
+    is_not_allowed(move_from_to(src, {XAxis::D, YAxis::FOUR}));
+    is_not_allowed(move_from_to(src, {XAxis::C, YAxis::THREE}));
+    is_not_allowed(move_from_to(src, {XAxis::B, YAxis::TWO}));
+    is_not_allowed(move_from_to(src, {XAxis::A, YAxis::ONE}));
+}
+
 }
