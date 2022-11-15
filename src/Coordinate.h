@@ -4,8 +4,8 @@
 namespace ChessGame {
 
 struct Coordinate {
-    XAxis x_;
-    YAxis y_;
+    X x_;
+    Y y_;
 };
 
 }

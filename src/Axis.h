@@ -4,7 +4,7 @@
 
 namespace ChessGame {
 
-enum class XAxis : uint8_t {
+enum class X : uint8_t {
     A = 1,
     B = 2,
     C = 3,
@@ -15,7 +15,7 @@ enum class XAxis : uint8_t {
     H = 8,
 };
 
-enum class YAxis : uint8_t {
+enum class Y : uint8_t {
     ONE = 1,
     TWO = 2,
     THREE = 3,
