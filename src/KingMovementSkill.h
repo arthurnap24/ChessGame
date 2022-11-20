@@ -5,7 +5,7 @@
 
 namespace ChessGame {
 
-class ChessSkill {
+class KingMovementSkill {
 public:
     bool move(const King& king, 
         const Coordinate& src,

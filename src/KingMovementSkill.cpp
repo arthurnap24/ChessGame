@@ -1,18 +1,18 @@
-#include "ChessSkill.h"
+#include "KingMovementSkill.h"
 
 #include <cstdlib>
 #include <iostream>
 
 namespace ChessGame {
 
-bool ChessSkill::move(const King& king,
+bool KingMovementSkill::move(const King& king,
     const Coordinate& src,
     const Coordinate& dst)
 {
     return is_neighbor(src, dst);
 }
 
-bool ChessSkill::is_neighbor(const Coordinate& src, const Coordinate& dst)
+bool KingMovementSkill::is_neighbor(const Coordinate& src, const Coordinate& dst)
 {
     if (src == dst) return false;
     uint8_t x_distance = std::abs(

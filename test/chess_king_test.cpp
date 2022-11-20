@@ -1,5 +1,6 @@
 #include "fixtures/ChessPieceMovementTest.hpp"
 #include "King.h"
+#include "KingMovementSkill.h"
 
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
@@ -8,7 +9,7 @@ namespace {
 
 using namespace ChessGame;
 
-using KingTest = fixtures::ChessPieceMovementTest<King>;
+using KingTest = fixtures::ChessPieceMovementTest<King, KingMovementSkill>;
 
 TEST_F(KingTest, MoveUp)
 {

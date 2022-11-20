@@ -7,7 +7,7 @@ add_executable(game_test main.cpp
     game_runner_test.cpp
     chess_king_test.cpp
     coordinates_test.cpp
-    ${CMAKE_SOURCE_DIR}/src/ChessSkill.cpp)
+    ${CMAKE_SOURCE_DIR}/src/KingMovementSkill.cpp)
 
 target_include_directories(game_test PUBLIC 
     ${CMAKE_SOURCE_DIR}/src/
