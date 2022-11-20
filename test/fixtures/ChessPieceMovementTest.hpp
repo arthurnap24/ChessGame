@@ -1,6 +1,5 @@
 #pragma once
 
-#include "ChessSkill.h"
 #include "Coordinate.hpp"
 
 #include <gtest/gtest.h>
@@ -9,7 +8,7 @@ namespace fixtures {
 
 using namespace ChessGame;
 
-template <typename ChessPieceType>
+template <typename ChessPieceType, typename ChessPieceMovementSkillType>
 class ChessPieceMovementTest : public ::testing::Test {
 protected:
     void expect_move_ok(const Coordinate& src, const Coordinate& dst)
@@ -28,7 +27,7 @@ private:
     }
 
     ChessPieceType piece_;
-    ChessSkill skill_;
+    ChessPieceMovementSkillType skill_;
 };
 
 }
