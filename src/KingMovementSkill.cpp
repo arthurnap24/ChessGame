@@ -1,6 +1,7 @@
 #include "KingMovementSkill.h"
 
 #include <cstdlib>
+#include <iostream>
 
 namespace ChessGame {
 

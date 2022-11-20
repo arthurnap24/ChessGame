@@ -11,6 +11,7 @@ public:
         const Coordinate& src,
         const Coordinate& dst);
 
+
 private:
     bool is_neighbor(const Coordinate& src, const Coordinate& dst);
 };
