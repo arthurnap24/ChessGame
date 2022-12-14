@@ -76,4 +76,28 @@ TEST_F(BishopTest, MoveSameSpotCorners)
     expect_move_bad(top_right, top_right);
 }
 
+TEST_F(BishopTest, MoveVertical)
+{
+    Coordinate src{X::A, Y::ONE};
+    expect_move_bad(src, {X::A, Y::TWO});
+    expect_move_bad(src, {X::A, Y::THREE});
+    expect_move_bad(src, {X::A, Y::FOUR});
+    expect_move_bad(src, {X::A, Y::FIVE});
+    expect_move_bad(src, {X::A, Y::SIX});
+    expect_move_bad(src, {X::A, Y::SEVEN});
+    expect_move_bad(src, {X::A, Y::EIGHT});
+}
+
+TEST_F(BishopTest, MoveHorizontal)
+{
+    Coordinate src{X::A, Y::ONE};
+    expect_move_bad(src, {X::B, Y::ONE});
+    expect_move_bad(src, {X::C, Y::ONE});
+    expect_move_bad(src, {X::D, Y::ONE});
+    expect_move_bad(src, {X::E, Y::ONE});
+    expect_move_bad(src, {X::F, Y::ONE});
+    expect_move_bad(src, {X::G, Y::ONE});
+    expect_move_bad(src, {X::H, Y::ONE});
+}
+
 }
