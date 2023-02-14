@@ -3,7 +3,6 @@
 #include "KingMovementSkill.h"
 
 #include <gtest/gtest.h>
-#include <gmock/gmock.h>
 
 namespace {
 
