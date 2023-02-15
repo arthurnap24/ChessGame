@@ -8,6 +8,9 @@ jobs:
   build-ufmdt:
     runs-on: ubuntu-latest
     steps:
+      - name: install-conan
+        run: |
+          pip install conan
       - name: checkout
         uses: actions/checkout@v3
       - name: build-debug
