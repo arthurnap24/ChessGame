@@ -13,10 +13,7 @@ public:
         const Coordinate& src,
         const Coordinate& dst);
 private:
-    bool is_L_shaped(
-        const Coordinate& src,
-        const Coordinate& dst);
-    bool has_long_and_short_stem(
+    bool is_L_shaped_path(
         const Coordinate& src,
         const Coordinate& dst);
 };
