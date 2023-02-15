@@ -18,10 +18,10 @@ jobs:
           ./scripts/build.sh debug
       - name: test-debug
         run: |
-          ./build/debug/game_test
+          ./build/debug/bin/game_test
       - name: build-release
         run: |
           ./scripts/build.sh release
       - name: test-release
         run: |
-          ./build/debug/game_test
+          ./build/debug/bin/game_test
