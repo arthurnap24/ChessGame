@@ -1,0 +1,27 @@
+name: build-chess-game
+on:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  build-ufmdt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install-conan
+        run: |
+          pip install conan
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: build-debug
+        run: |
+          ./scripts/build.sh debug
+      - name: test-debug
+        run: |
+          ./build/debug/bin/game_test
+      - name: build-release
+        run: |
+          ./scripts/build.sh release
+      - name: test-release
+        run: |
+          ./build/debug/bin/game_test
