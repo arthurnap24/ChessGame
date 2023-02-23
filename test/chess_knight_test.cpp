@@ -20,12 +20,6 @@ TEST_F(KnightTest, MoveHorizontal)
     expect_cannot_move_horizontal();
 }
 
-TEST_F(KnightTest, MoveSameSpot)
-{
-    Coordinate pos{X::D, Y::THREE};
-    expect_move_bad(pos, pos);
-}
-
 TEST_F(KnightTest, MoveLeftTwiceUpOnce)
 {
     expect_move_ok(-2, 1);

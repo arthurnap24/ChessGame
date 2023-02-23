@@ -24,12 +24,11 @@ protected:
     void expect_move_ok(int x_offset, int y_offset)
     {
         for (uint8_t x = kMinX; x <= kMaxX; ++x) {
+            int dst_x = x + x_offset;
             for (uint8_t y = kMinY; y <= kMaxY; ++y) {
-                int dst_x = x + x_offset;
                 int dst_y = y + y_offset;
-                bool is_dst_outside = dst_x < 1 || dst_x > 8 
-                    || dst_y < 1 || dst_y > 8;
-                if (is_dst_outside) {
+                if (bool is_dst_outside = dst_x < 1 || dst_x > 8 || dst_y < 1 || dst_y > 8;
+                    is_dst_outside) {
                     continue;
                 }
                 Coordinate src{static_cast<X>(x), static_cast<Y>(y)};
